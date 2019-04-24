@@ -1,22 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!--<button @click="demo1">demo1</button>-->
+
+    <!--<Demo1 v-if="showdemo1"></Demo1>-->
+
+    <Touch></Touch>
+
+
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import Demo1 from './components/Demo1'
+import Touch from "./components/Touch";
 
 export default {
   name: 'app',
+  data(){
+    return {
+        showdemo1 : false
+    }
+  },
   components: {
-    HelloWorld
+      Touch,
+
+  },
+
+  methods:{
+      demo1(){
+          this.showdemo1 = !this.showdemo1
+      }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,5 +43,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+
 }
+
+
 </style>
